@@ -34,7 +34,8 @@ const Registration = () => {
     fetch(backendUrl + "/auth/verifyCredentials", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
         }
     }).then(
         response => {
@@ -70,6 +71,7 @@ const Registration = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
           },
           body: JSON.stringify({
             username: username,
