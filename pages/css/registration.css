@@ -1,0 +1,64 @@
+.registrationBox {
+    position: absolute;
+    top: 100%;
+}
+
+.registrationBox2{
+    margin-top: 2%;
+    border-radius: 25px;
+    background-color: #e5e5e5;
+    width: 30%;
+    height: 80%;
+    min-width: 490px;
+    min-height: 490px;  
+}
+
+.registrationCityBox{
+    border-radius: 25px;
+    background-color: #e5e5e5;
+    margin-top: 0%;
+    width: 30%;
+    height: 40%;
+    min-width: 490px;
+    min-height: 490px;  
+}
+
+.registrationText {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 5%;
+}
+
+.registrationInputBox {
+    position: relative;
+    text-align: left;
+    left: 90px;
+    font-size: 15px;
+    height: 10px;
+}
+
+.registrationCityInputBox{
+    text-align: left;
+    margin-left: auto;
+    margin-right: 14.5%;
+    max-width: 75%;
+    font-size: 15px;
+}
+
+.registrationInputBox2 {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%;
+    font-size: 15px;
+}
+
+.registrationButton {
+    position: relative;
+    text-align: center;
+    font-size: 15px;
+    height: 40px;
+    width: 150px;
+    background:#FB8500;
+    border-radius: 25px;
+}

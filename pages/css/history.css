@@ -1,0 +1,19 @@
+.historyText {
+  position: relative;
+  text-align: center;
+  font-size: 25px;
+}
+
+.historyResults {
+  margin: 10px;
+}
+
+.historyBox {
+  border-radius: 25px;
+  background-color: #e5e5e5;
+  margin-top: 4%;
+  width: 80%;
+  min-height: 100%;
+  min-width: 490px;
+  padding: 2%;
+}

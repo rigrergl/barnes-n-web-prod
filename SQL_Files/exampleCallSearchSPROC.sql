@@ -1,0 +1,1 @@
+CALL SearchListings('Random Book 1', '', '', '', 'POINT(6.906124 79.96952)', 1)

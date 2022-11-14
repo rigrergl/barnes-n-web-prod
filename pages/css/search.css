@@ -1,0 +1,20 @@
+.searchText {
+  position: relative;
+  text-align: center;
+  font-size: 25px;
+}
+
+.searchInputBox {
+  border-radius: 25px;
+  background-color: #e5e5e5;
+  margin-top: 4%;
+  width: 80%;
+  height: 80%;
+  min-width: 490px;
+  min-height: 490px;
+  padding: 2%;
+}
+
+.searchResults {
+  margin: 10px;
+}

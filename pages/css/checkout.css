@@ -1,0 +1,20 @@
+.checkoutButton {
+  text-align: center;
+  font-size: 15;
+  width: 70%;
+  background: rgb(21, 188, 21);
+  border-radius: "25px";
+  border-color: black;
+  margin-top: 20%;
+}
+
+.checkoutBox1 {
+  border-radius: 25px;
+  background-color: #e5e5e5;
+  margin-bottom: 2%;
+  width: 30%;
+  height: 40%;
+  min-width: 490px;
+  min-height: 400px;
+  max-height: 430px;
+}

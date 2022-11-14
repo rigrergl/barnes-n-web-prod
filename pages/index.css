@@ -1,0 +1,78 @@
+.page {
+  height: 1024px;
+}
+
+.header {
+  height: 100px;
+  background: #4b6272;
+}
+
+.headerLogo {
+  height: 100px;
+  min-width: 100px;
+}
+
+.headerLogoText {
+  font-size: 30px;
+  min-width: 180px;
+  margin-top: 25px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.headerRow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.searchBox {
+  border-radius: 25px;
+  width: 980px;
+  height: 490px;
+  background-color: #e5e5e5;
+  position: absolute;
+  left: 245px;
+  top: 25%;
+}
+
+.resultsBox {
+  border-radius: 10px;
+  width: 450px;
+  height: 400px;
+  background-color: #c5c5c5;
+  top: 25%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+.registrationBox {
+  border-radius: 25px;
+  width: 490px;
+  height: 580px;
+  background-color: #e5e5e5;
+  position: absolute;
+  left: 490px;
+  top: 25%;
+}
+
+body {
+  background: #284b63;
+}
+

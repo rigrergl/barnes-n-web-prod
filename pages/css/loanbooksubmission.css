@@ -1,0 +1,40 @@
+.submissionBox2 {
+    border-radius: 25px;
+    background-color: #e5e5e5;
+    margin-top: 2%;
+    width: 35%;
+    height: 55%;
+    min-width: 490px;
+    min-height: 490px;
+  }
+
+  .submissionText {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 1%;
+  }
+
+  .submissionSmallText {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 2%;
+  }
+
+  .submissionButton{
+    text-align: center;
+    margin-left: 35%;
+    font-size: 15;
+    width: 30%;
+    background: #FB8500;
+    border-radius: '25px';
+    border-color: black;
+    margin-top: 5%;
+  }
+
+  .submissionInputBox {
+    position: relative;
+    text-align: center;
+    font-size: 15px;
+    height: 10px;
+}
+

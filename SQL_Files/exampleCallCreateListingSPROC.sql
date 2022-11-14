@@ -1,0 +1,1 @@
+CALL CreateListing(1, 'A Game of Thrones', 'POINT(6.906124 79.96952)', '', '', '', 'George Martin', STR_TO_DATE('03 01 2023', '%d %m %Y'));

@@ -1,0 +1,19 @@
+.editProfileBox{
+    margin-top: 8%;
+    border-radius: 25px;
+    background-color: #e5e5e5;
+    width: 30%;
+    height: 55%;
+    min-width: 490px;
+    min-height: 490px;  
+}
+
+.profileBox{
+    margin-top: 2%;
+    border-radius: 25px;
+    background-color: #e5e5e5;
+    width: 30%;
+    height: 65%;
+    min-width: 490px;
+    min-height: 490px;  
+}
