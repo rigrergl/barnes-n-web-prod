@@ -1,4 +1,3 @@
-import Checkout from "pages/Checkout";
 import Button from "react-bootstrap/Button";
 
 const navigateToCheckout = () => {
