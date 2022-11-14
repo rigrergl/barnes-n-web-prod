@@ -25,7 +25,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                     throw error;
                 }
                 if (results.length === 0) {
-                    return res.status(401).send({
+                    return res.status(405).send({
                         message: "User does not exist"
                     });
                 }
