@@ -30,7 +30,6 @@ const Login = () => {
   const login = async () => {
     const response = await fetch(backendUrl + "/auth/signin", {
         method: "POST",
-        mode: "no-cors",
         headers: {
             "Content-Type": "application/json"
         },
@@ -53,7 +52,6 @@ const Login = () => {
 const checksignin = () => {
   fetch(backendUrl + "/auth/verifyCredentials", {
       method: "POST",
-      mode: "no-cors",
       headers: {
           "Content-Type": "application/json"
       }

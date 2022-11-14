@@ -42,7 +42,6 @@ const Navigate = () => {
   const checksignin = () => {
     fetch(backendUrl + "/auth/verifyCredentials", {
         method: "POST",
-        mode: "no-cors",
         headers: {
             "Content-Type": "application/json"
         }
