@@ -43,7 +43,9 @@ const Navigate = () => {
     fetch(backendUrl + "/auth/verifyCredentials", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin" :  "*",    
+            "Access-Control-Allow-Headers" : "Origin, X-Requested-With, Content-Type, Accept"
         }
     }).then(
         response => {
