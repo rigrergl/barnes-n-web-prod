@@ -33,9 +33,9 @@ const Registration = () => {
   const checksignin = () => {
     fetch(backendUrl + "/auth/verifyCredentials", {
         method: "POST",
+        mode: "no-cors",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*"
         }
     }).then(
         response => {
