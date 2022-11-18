@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import connectionPool from "@/lib/db";
+import isInputClean from "@/lib/isInputClean";
 
 const bcrypt = require("bcryptjs");
 
@@ -16,6 +17,22 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     state,
     zipcode,
   } = req.body;
+
+  if (!isInputClean(username) || 
+      !isInputClean(password) ||
+      !isInputClean(email) ||
+      !isInputClean(fullname) ||
+      !isInputClean(phone) ||
+      !isInputClean(street) ||
+      !isInputClean(optaddress) ||
+      !isInputClean(city) ||
+      !isInputClean(state) ||
+      !isInputClean(zipcode)) {
+    return res.status(422).send({
+        error: true,
+        message: "Input contains SQL escape characters. Rejected"
+    });
+  }
   const hashedPassword = bcrypt.hashSync(password, 8);
 
   const query =

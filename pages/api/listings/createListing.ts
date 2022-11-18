@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import getCookieByName from "@/lib/getCookieByName";
 import verifyToken from '@/lib/verifyToken';
 import connectionPool from "@/lib/db";
+import isInputClean from "@/lib/isInputClean";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const httpMethod = req.method;
@@ -12,6 +13,18 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     let { title, isbn10, isbn13, image, author, maxDueDate } = req.body;
+
+    if (!isInputClean(title) ||
+        !isInputClean(isbn10) ||
+        !isInputClean(isbn13) ||
+        !isInputClean(image) ||
+        !isInputClean(author) ||
+        !isInputClean(maxDueDate)) {
+        return res.status(422).send({
+        error: true,
+        message: "Input contains SQL escape characters. Rejected"
+        });
+    }
 
     const cookie = req.headers.cookie || "";
     const accessToken = getCookieByName('accessToken', cookie);
