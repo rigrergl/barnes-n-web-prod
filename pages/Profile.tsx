@@ -20,7 +20,7 @@ const Profile = () => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [zipcode, setZipcode] = useState("");
-  const [success, setSuccess] = useState(0);
+  const [success, setSuccess] = useState(false);
   const [userID, setUserID] = useState("");
 
   const [statusMessage, setStatusMessage] = useState("");
@@ -79,6 +79,7 @@ const Profile = () => {
     }
     else
     {
+      setSuccess(true);
       setStatusMessage(data.message);
     }
     
