@@ -1,11 +1,26 @@
 import connectionPool from "@/lib/db";
 import getCookieByName from "@/lib/getCookieByName";
+import isInputClean from "@/lib/isInputClean";
 import verifyToken from "@/lib/verifyToken";
 import { TokenExpiredError } from "jsonwebtoken";
 import { NextApiRequest, NextApiResponse } from "next"
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const { phone, email, street, optaddress, city, state, zipcode } = req.body;
+
+    if (!isInputClean(phone) ||
+    !isInputClean(email) ||
+    !isInputClean(street) ||
+    !isInputClean(optaddress) ||
+    !isInputClean(city) ||
+    !isInputClean(state) ||
+    !isInputClean(zipcode)) {
+        return res.status(422).send({
+        error: true,
+        message: "Input contains SQL escape characters. Rejected"
+    });
+}
+
     const cookie = req.headers.cookie || "";
     const accessToken = getCookieByName("accessToken", cookie);
     let decodedToken;

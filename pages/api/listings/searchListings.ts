@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import connectionPool from "@/lib/db";
+import isInputClean from "@/lib/isInputClean";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const httpMethod = req.method;
@@ -22,6 +23,18 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 //    longitude,
     maxDistanceInMiles,
   } = req.body;
+
+  if (!isInputClean(bookTitle) ||
+      !isInputClean(isbn_10) ||
+      !isInputClean(isbn_13) ||
+      !isInputClean(author)) {
+      return res.status(422).send({
+      error: true,
+      message: "Input contains SQL escape characters. Rejected"
+      });
+  }
+
+
   // const maxDistanceInMeters = 1609.34 * maxDistanceInMiles;
 
   // const query = `CALL SearchListings('${bookTitle}', '${isbn_10}', '${isbn_13}', '${author}', 'POINT(${latitude} ${longitude})', ${maxDistanceInMeters})`;

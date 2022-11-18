@@ -2,10 +2,18 @@ import { NextApiRequest, NextApiResponse } from "next";
 import getCookieByName from "@/lib/getCookieByName";
 import verifyToken from "@/lib/verifyToken";
 import connectionPool from "@/lib/db";
+import isInputClean from "@/lib/isInputClean";
 import { TokenExpiredError } from "jsonwebtoken";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     let { userId } = req.body;
+
+    if (!isInputClean(userId)) {
+        return res.status(422).send({
+        error: true,
+        message: "Input contains SQL escape characters. Rejected"
+    });
+
     const cookie = req.headers.cookie || "";
     const accessToken = getCookieByName("accessToken", cookie);
     let decodedToken;
