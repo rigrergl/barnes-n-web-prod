@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import connectionPool from "@/lib/db"
+import isInputClean from "@/lib/isInputClean";
 
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken');
@@ -14,6 +15,13 @@ const jwt = require('jsonwebtoken');
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const { username, password } = req.body;
+
+    if (!isInputClean(username) || !isInputClean(password)) {
+        return res.status(422).send({
+            error: true,
+            message: "Input contains SQL escape characters. Rejected"
+        });
+    }
 
     //Get the hashedPassword from db
     const query = `SELECT user_id, hashedPassword from Users WHERE username = '${username}'`;
