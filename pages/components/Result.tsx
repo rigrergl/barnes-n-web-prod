@@ -40,7 +40,7 @@ const Result = (props: Props) => {
   const finishCheckout = () => {
     console.log("DD: " + props.max_due_date);
     setCanCheckOut(false);
-    setStatusMessage("You have checked out the book");
+    // setStatusMessage("You have checked out the book");
     setSuccess(true);
   };
 
@@ -60,6 +60,7 @@ const Result = (props: Props) => {
       .then((res) => res.json())
       .then((result) => {
         console.log("Success");
+        setStatusMessage(result.message);
       });
   };
 

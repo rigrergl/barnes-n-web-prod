@@ -33,6 +33,7 @@ const HistoricalLoanList = ({ results }: Props) => {
             rented_by,
           }) => (
             <HistoricalLoanResult
+              key={listing_id}
               title={title}
               author={author}
               isbn_10={isbn_10}

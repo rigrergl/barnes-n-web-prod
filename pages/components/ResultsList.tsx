@@ -25,6 +25,7 @@ const ResultsList = ({ results }: Props) => {
         {results.map(
           ({ title, author, isbn_10, isbn_13, listing_id, max_due_date }) => (
             <Result
+              key={listing_id}
               title={title}
               author={author}
               isbn_10={isbn_10}
