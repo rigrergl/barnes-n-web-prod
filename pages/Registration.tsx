@@ -69,7 +69,6 @@ const Registration = () => {
       if (password === confirmPassword) {
         const response = await fetch(backendUrl + "/auth/signup", {
           method: "POST",
-          mode: "no-cors",
           headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*"
