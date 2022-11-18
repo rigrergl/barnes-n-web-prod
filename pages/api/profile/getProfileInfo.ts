@@ -13,6 +13,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             error: true,
             message: "Input contains SQL escape characters. Rejected"
         });
+    }
 
         const cookie = req.headers.cookie || "";
         const accessToken = getCookieByName("accessToken", cookie);
@@ -80,4 +81,3 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             });
         });
     }
-}
