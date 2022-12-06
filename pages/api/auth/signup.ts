@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import connectionPool from "@/lib/db";
 import isInputClean from "@/lib/isInputClean";
+import isPasswordValid from "@/lib/isPasswordValid";
 
 const bcrypt = require("bcryptjs");
 
@@ -17,6 +18,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     state,
     zipcode,
   } = req.body;
+
+  if (!isPasswordValid(password)) {
+    return res.status(403).send({
+      error: true,
+      message: "Password is not strong enough"
+    });
+  }
 
   if (!isInputClean(username) || 
       !isInputClean(password) ||
