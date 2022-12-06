@@ -1,5 +1,5 @@
 export default (password: string) : boolean  => {
-    const specialCharacterRegex = /\$|@|#|%|&|!/;
+    const specialCharacterRegex = /\$|@|#|%|&|!|\*/;
     const digitRegex = /\d/;
 
     if (password.length < 8 || password.length > 20) {
