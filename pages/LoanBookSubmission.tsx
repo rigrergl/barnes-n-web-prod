@@ -154,13 +154,13 @@ const LoanBookSubmission = () => {
                 </Row>)}
 
                 {loggedIn && (<Row as={Row} className="mx-auto mb-3">
-                    <Form.Label htmlFor="inputReturnBy">Return Date (mm dd yyyy)</Form.Label>
+                    <Form.Label htmlFor="inputReturnBy">Return Date (dd mm yyyy)</Form.Label>
                     <Form.Control
                         onChange={(e) => setReturnBy(e.target.value)}
                         type="Calender"
                         id="inputReturnBy"
                         //placeholder="Enter Return Date as mm/dd/yyyy"
-                        placeholder = "Ex: 03 01 2022"
+                        placeholder = "Ex: 24 01 2022"
                     />
                 </Row>)}
 
